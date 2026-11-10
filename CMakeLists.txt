@@ -3,4 +3,5 @@ project(orc)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(orc main.cpp)
+add_executable(orc app/main.cpp)
+target_compile_options(orc PRIVATE -Wall -Wextra -Wpedantic)
