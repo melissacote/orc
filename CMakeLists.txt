@@ -3,5 +3,9 @@ project(orc)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(orc app/main.cpp)
+add_executable(orc app/main.cpp
+        core/Map.cpp
+        core/Map.h
+        core/MapParsing.cpp
+        core/MapParsing.h)
 target_compile_options(orc PRIVATE -Wall -Wextra -Wpedantic)
