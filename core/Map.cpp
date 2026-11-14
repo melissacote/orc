@@ -1,8 +1,8 @@
 #include "Map.h"
 #include <stdexcept>
 
-Map::Map(int width, int height, const std::vector<Tile> &tiles)
-    : width(width), height(height), tiles(tiles)
+Map::Map(const int width, const int height, const std::vector<Tile> &tiles)
+    : m_width(width), m_height(height), m_tiles(tiles)
 {
     if (width <= 0 || height <= 0)
     {
@@ -17,7 +17,7 @@ Map::Map(int width, int height, const std::vector<Tile> &tiles)
 
 bool Map::inBounds(const int x, const int y) const
 {
-    return x >= 0 && y >= 0 && x < width && y < height;
+    return x >= 0 && y >= 0 && x < m_width && y < m_height;
 }
 
 
@@ -27,15 +27,15 @@ Tile Map::at(const int x, const int y) const
     {
         throw std::out_of_range("Map::at: (" + std::to_string(x) + ", " + std::to_string(y) + ") is out of bounds");
     }
-    return tiles[y * width + x];
+    return m_tiles[y * m_width + x];
 }
 
 int Map::getWidth() const
 {
-    return width;
+    return m_width;
 }
 
 int Map::getHeight() const
 {
-    return height;
+    return m_height;
 }

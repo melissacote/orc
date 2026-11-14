@@ -10,9 +10,9 @@ enum class Tile
 
 class Map
 {
-    int width;
-    int height;
-    std::vector<Tile> tiles;
+    int m_width;
+    int m_height;
+    std::vector<Tile> m_tiles;
 
 public:
     Map(int width, int height, const std::vector<Tile> &tiles);
