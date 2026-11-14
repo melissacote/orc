@@ -4,7 +4,7 @@
 #include "Map.h"
 
 
-Map mapFromStrings(const std::vector<std::string>& rows)
+Map mapFromStrings(const std::vector<std::string>& rows);
 
 
 #endif //MAPPARSING_H
