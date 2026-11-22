@@ -1,9 +1,9 @@
-
-
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
 
 #include "core/GameState.h"
 #include "core/Map.h"
@@ -31,6 +31,22 @@ int main()
 
         GameState state = GameState(std::move(newMap), {5, 5});
         std::cout << "GameState created successfully!\n";
+
+        sf::RenderWindow window(sf::VideoMode({640u, 480u}), "Orc");
+
+        while (window.isOpen())
+        {
+            while (const std::optional event = window.pollEvent())
+            {
+                if (event->is<sf::Event::Closed>())
+                {
+                    window.close();
+                }
+            }
+
+            window.clear();
+            window.display();
+        }
     }
     catch (const std::exception& e)
     {
