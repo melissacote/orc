@@ -10,6 +10,8 @@ class GameState
 
 public:
     GameState(Map map, Position playerPosition);
+    const Map& getMap() const;
+    const Position& getPlayerPosition() const;
 };
 
 

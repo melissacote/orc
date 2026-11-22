@@ -17,3 +17,14 @@ GameState::GameState(Map map, const Position playerPosition)
     }
 }
 
+const Map& GameState::getMap() const
+{
+    return m_map;
+}
+
+const Position& GameState::getPlayerPosition() const
+{
+    return m_playerPosition;
+}
+
+

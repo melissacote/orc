@@ -32,6 +32,9 @@ int main()
         GameState state = GameState(std::move(newMap), {5, 5});
         std::cout << "GameState created successfully!\n";
 
+        std::cout << "Player position X: " << state.getPlayerPosition().x << "\n";
+        std::cout << "Player position Y: " << state.getPlayerPosition().y << "\n";
+
         sf::RenderWindow window(sf::VideoMode({640u, 480u}), "Orc");
 
         while (window.isOpen())
